@@ -21,8 +21,8 @@ function init() {
     $(".right_button").on('touchstart', right_click);
     //$(".click_area").on('touchstart', left_click);
     $(".click_area").on('touchmove',mouse_moved );
-	$(".click_area").click(left_click);
-	$(".click_area").on('contextmenu', right_click_dcm);
+    $(".click_area").click(left_click);
+    $(".click_area").on('contextmenu', right_click_dcm);
 }
 
 function left_click() {
