@@ -20,7 +20,9 @@ function init() {
     $(".left_button").on('touchstart', left_click);
     $(".right_button").on('touchstart', right_click);
     //$(".click_area").on('touchstart', left_click);
-    $(".click_area").on('touchmove',mouse_moved )
+    $(".click_area").on('touchmove',mouse_moved );
+	$(".click_area").click(left_click);
+	$(".click_area").on('contextmenu', right_click_dcm);
 }
 
 function left_click() {
@@ -35,6 +37,11 @@ function right_click() {
         "./api/mouse/",
         JSON.stringify({method: "right"})
     );
+}
+
+function right_click_dcm(e) {
+	e.preventDefault();
+	right_click();
 }
 
 function mouse_moved(event) {
